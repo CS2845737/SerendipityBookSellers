@@ -1,0 +1,100 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int choice = 0;
+    while (choice != 2)
+    {
+        string date = "";
+        int quan = 0;
+        string iSBN = "";
+        string title = "";
+        float price = 0;
+        int numChars = 0;
+    
+        cout << "Serendipty Book Sellers\n";
+        cout << " Cashier Module\n\n";
+        cout << "Date: ";
+        cin >> date;
+        cout << "Quantity of Book: ";
+        cin >> quan;
+        cout << "ISBN: ";
+        cin >> iSBN;
+        cout << "Title: ";
+        cin.ignore();
+        getline(cin, title);
+        cout << "Price: ";
+        cin >> price;
+    
+    
+	    cout << "Serendipty Book Sellers\n\n";
+	    cout << "Date:" << date << " \n\n";
+	    cout << "QTY  ISBN";
+	    cout << "\tTitle\t";
+	    cout << "\t\t\tPrice";
+	    cout << "\t     Total\n";
+	    cout << "__________________________________________________________________\n";
+	    cout << quan;
+	    float k = quan;
+	    numChars = 0;
+	    while (k > 1)
+	    {
+	        k = k / 10;
+	        numChars++;
+	    }
+	
+	    for (int i = 0; i < (5 - numChars); i++)
+	    {
+	        cout << " ";
+	    }
+	
+	    cout << iSBN;
+	
+	    for (int i = 0; i < (11 - iSBN.length()); i++)
+	    {
+	        cout << " ";
+	    }
+	
+	    cout << title;
+	
+	    for (int i = 0; i < (32 - title.length()); i++)
+	    {
+	        cout << " ";
+	    }
+	
+	    cout << "$ " << price;
+	
+	    k = price;
+	    numChars = 0;
+	    while (k > 1)
+	    {
+	        k = k / 10;
+	        numChars++;
+	    }
+	
+	    for (int i = 0; i < (8 - numChars); i++)
+	    {
+	        cout << " ";
+	    }
+	
+    	cout << "$ " << price * quan << endl;
+	
+    	cout << endl;
+    	cout << endl;
+    	cout << "\t\tSubtotal  " << price * quan <<"\n";
+    	cout << "\t\tTax  " << (price * quan) * 0.06 <<"\n";
+    	cout << "\t\tTotal  " << (price * quan) * 1.06 << "\n";
+    	cout << endl;
+    	cout << "Thank You for Shopping at Serendipity!";
+    	cout << "Process Another Transaction?\n1. Yes\n2. No\n";
+    	cin >> choice;
+    	while (choice != 1 && choice != 2)
+    	{
+    	    cout << "Process Another Transaction?\n1. Yes\n2. No\n";
+    	    cin >> choice;
+    	}
+    	cout << endl;
+    }
+    	return 0;
+}
