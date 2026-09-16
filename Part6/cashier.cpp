@@ -1,7 +1,10 @@
+#include "cashier.h"
 #include <iostream>
+#include <iomanip>
+#include <string>
 using namespace std;
 
-int main()
+void cashier()
 {
     int choice = 0;
     while (choice != 2)
@@ -51,14 +54,14 @@ int main()
 	
 	    cout << iSBN;
 	
-	    for (int i = 0; i < (11 - iSBN.length()); i++)
+	    for (int i = 0; i < (11 - static_cast<int>(iSBN.length())); i++)
 	    {
 	        cout << " ";
 	    }
 	
 	    cout << title;
 	
-	    for (int i = 0; i < (32 - title.length()); i++)
+	    for (int i = 0; i < (32 - static_cast<int>(title.length())); i++)
 	    {
 	        cout << " ";
 	    }
@@ -96,5 +99,4 @@ int main()
     	}
     	cout << endl;
     }
-    	return 0;
 }

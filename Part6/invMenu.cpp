@@ -1,7 +1,10 @@
+#include "invMenu.h"
 #include <iostream>
+#include <iomanip>
+#include <string>
 using namespace std;
 
-int main()
+void invMenu()
 {
     int choice = 0;
     while (choice != 5)
@@ -26,6 +29,43 @@ int main()
         cout << endl;
         cout << "You selected item: " << choice << endl;
         cout << endl;
-    }    
-	return 0;
+
+        switch(choice)
+        {
+        case 1:
+			lookUpBook();
+			break;
+		case 2:
+			addBook();
+			break;
+		case 3:
+			editBook();
+			break;
+		case 4:
+			deleteBook();
+			break;
+        case 5:
+            cout << "You selected option 5.";
+            break;
+        }
+    }
+}
+
+//Look up book stub function
+void lookUpBook()
+{
+    cout << "You selected a book.\n";
+}
+
+void addBook()
+{
+    cout << "You added a book.\n";
+}
+void editBook()
+{
+    cout << "You edited a book.\n";
+}
+void deleteBook()
+{
+     cout << "You deleted a book.\n";
 }

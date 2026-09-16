@@ -1,7 +1,10 @@
+#include "reports.h"
 #include <iostream>
+#include <iomanip>
+#include <string>
 using namespace std;
 
-int main()
+void reports()
 {
     int choice = 0;
     while (choice != 7)
@@ -25,6 +28,55 @@ int main()
     cout << endl;
     cout << "You selected item: " << choice << endl;
     cout << endl;
+
+    switch(choice)
+        {
+        case 1:
+			repListing();
+			break;
+		case 2:
+			repWholesale();
+			break;
+        case 3: 
+            repRetail();
+            break;
+		case 4:
+			repQty();
+			break;
+		case 5:
+			repCost();
+			break;
+        case 6:
+			repAge();
+			break;
+		case 7:
+            cout << "You selected option 5.";
+            break;
+        }
     }
-    return 0;
+}
+
+void repListing()
+{
+    cout << "You selected repListing";
+}
+void repWholesale()
+{
+    cout << "You selected repWholesale";
+}
+void repRetail()
+{
+    cout << "You selected repRetail";
+}
+void repQty()
+{
+    cout << "You selected repQty";
+}
+void repCost()
+{
+    cout << "You selected repCost";
+}
+void repAge()
+{
+    cout << "You selected repAge";
 }
