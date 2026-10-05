@@ -1,10 +1,10 @@
-#include "invMenu.h"
+#include "invmenu.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
 using namespace std;
 
-void invMenu()
+void invmenu()
 {
     int choice = 0;
     while (choice != 5)

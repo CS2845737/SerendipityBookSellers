@@ -1,4 +1,4 @@
-#include "invMenu.h"
+#include "invmenu.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -20,9 +20,8 @@ void invMenu()
         cout << "Enter Your Choice: ";
         cin >> choice;
         while (choice > 5 || choice < 1){
-            if (choice > 5 || choice < 1){
-                cout << "Please enter a number in the range 1-5.";
-            }
+
+            cout << "Please enter a number in the range 1-5.";
             cout << "Enter Your Choice: ";
             cin >> choice;
         }
@@ -54,18 +53,20 @@ void invMenu()
 //Look up book stub function
 void lookUpBook()
 {
-    cout << "You selected a book.\n";
+    cout << "You selected a Look Up Book.\n";
 }
 
 void addBook()
 {
-    cout << "You added a book.\n";
+    cout << "You added add book.\n";
 }
+
 void editBook()
 {
-    cout << "You edited a book.\n";
+    cout << "You selected edit book.\n";
 }
+
 void deleteBook()
 {
-     cout << "You deleted a book.\n";
+     cout << "You selected delete book.\n";
 }

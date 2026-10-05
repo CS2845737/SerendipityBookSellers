@@ -1,5 +1,5 @@
-#include "invMenu.h"
-#include "bookInfo.h"
+#include "invmenu.h"
+#include "bookinfo.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -16,7 +16,7 @@ extern int qty[SIZE];
 extern double wholesale[SIZE];
 extern double retail[SIZE];
 
-void invMenu()
+void invmenu()
 {
     int choice = 0;
     while (choice != 5)
@@ -74,7 +74,7 @@ void lookUpBook()
     {
         if (book == bookTitle[x])
         {
-           bookInfo(bookTitle[x], iSBN[x], bookAuthor[x], publisher[x], date[x], qty[x], wholesale[x], retail[x]);
+           bookinfo(bookTitle[x], iSBN[x], bookAuthor[x], publisher[x], date[x], qty[x], wholesale[x], retail[x]);
            break;
         }
     }
@@ -119,7 +119,7 @@ void editBook()
     {
         if (book == bookTitle[x])
         {
-           bookInfo(bookTitle[x], iSBN[x], bookAuthor[x], publisher[x], date[x], qty[x], wholesale[x], retail[x]);
+           bookinfo(bookTitle[x], iSBN[x], bookAuthor[x], publisher[x], date[x], qty[x], wholesale[x], retail[x]);
            cout << "Which field would you like to edit?\n";
            cout << "1. Book Title\n";
            cout << "2. ISBN\n";
@@ -188,7 +188,7 @@ void deleteBook()
     {
         if (book == bookTitle[x])
         {
-           bookInfo(bookTitle[x], iSBN[x], bookAuthor[x], publisher[x], date[x], qty[x], wholesale[x], retail[x]);
+           bookinfo(bookTitle[x], iSBN[x], bookAuthor[x], publisher[x], date[x], qty[x], wholesale[x], retail[x]);
            break;
            cout << "Are you sure you want to delete this book? (Y/N): ";
            char choice;

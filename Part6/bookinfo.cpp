@@ -1,4 +1,4 @@
-#include "bookInfo.h"
+#include "bookinfo.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -8,6 +8,7 @@ void bookInfo()
 {
         cout << "Serendipity Booksellers\n";
         cout << "   Book Information\n\n";
+        
         cout << "ISBN: \n";
         cout << "Title: \n";
         cout << "Author: \n";
