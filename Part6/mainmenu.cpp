@@ -7,10 +7,10 @@ using namespace std;
 
 int main()
 {
-	int choice; //To hold the user's menu choice
+	int choice = 0; //To hold the user's menu choice
     while (choice != 4)
     {
-	    cout << "Serendipty Booksellers\n";
+	    cout << "Serendipity Booksellers\n";
 	    cout << "\tMain Menu\n\n";
 	
 	    cout << "1. Cashier Module\n";
