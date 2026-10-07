@@ -85,9 +85,9 @@ void cashier()
 	
     	cout << endl;
     	cout << endl;
-    	cout << "\t\tSubtotal  " << price * quan <<"\n";
-    	cout << "\t\tTax  " << (price * quan) * 0.06 <<"\n";
-    	cout << "\t\tTotal  " << (price * quan) * 1.06 << "\n";
+    	cout << "\t\tSubtotal  " << setprecision(2) << fixed << price * quan <<"\n";
+    	cout << "\t\tTax  " << setprecision(2) << fixed << (price * quan) * 0.06 <<"\n";
+    	cout << "\t\tTotal  " << setprecision(2) << fixed << (price * quan) * 1.06 << "\n";
     	cout << endl;
     	cout << "Thank You for Shopping at Serendipity!";
     	cout << "Process Another Transaction?\n1. Yes\n2. No\n";
