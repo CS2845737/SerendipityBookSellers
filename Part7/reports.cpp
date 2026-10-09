@@ -19,9 +19,7 @@ void reports()
         cout << "Enter Your Choice: ";
         cin >> choice;
         while (choice > 7 || choice < 1){
-            if (choice > 7 || choice < 1){
-                    cout << "Please enter a number in the range 1-7.";
-            }
+            cout << "Please enter a number in the range 1-7.";
             cout << "Enter Your Choice: ";
             cin >> choice;
         }
@@ -50,7 +48,7 @@ void reports()
 			repAge();
 			break;
 		case 7:
-            cout << "You selected option 5.";
+            cout << "You selected option 7.";
             break;
         }
     }
@@ -58,25 +56,30 @@ void reports()
 
 void repListing()
 {
-    cout << "You selected repListing";
+    cout << "You selected Inventory Listing\n";
 }
+
 void repWholesale()
 {
-    cout << "You selected repWholesale";
+    cout << "You selected inventory Wholesale value\n";
 }
+
 void repRetail()
 {
-    cout << "You selected repRetail";
+    cout << "You selected inventory Retail value\n";
 }
+
 void repQty()
 {
-    cout << "You selected repQty";
+    cout << "You selected Listing By Quantity\n";
 }
+
 void repCost()
 {
-    cout << "You selected repCost";
+    cout << "You selected Listing By Cost\n";
 }
+
 void repAge()
 {
-    cout << "You selected repAge";
+    cout << "You selected Listing By Age\n";
 }

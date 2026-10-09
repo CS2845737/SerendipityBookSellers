@@ -20,7 +20,6 @@ void invMenu()
         cout << "Enter Your Choice: ";
         cin >> choice;
         while (choice > 5 || choice < 1){
-
             cout << "Please enter a number in the range 1-5.";
             cout << "Enter Your Choice: ";
             cin >> choice;
