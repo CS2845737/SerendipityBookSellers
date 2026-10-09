@@ -11,19 +11,19 @@ void cashier()
     {
         string date = "";
         int quan = 0;
-        string iSBN = "";
+        string isbn = "";
         string title = "";
         float price = 0;
-        int numChars = 0;
+		bool pass = true;
     
-        cout << "Serendipty Book Sellers\n";
+        cout << "Serendipity Book Sellers\n";
         cout << " Cashier Module\n\n";
         cout << "Date: ";
         cin >> date;
         cout << "Quantity of Book: ";
         cin >> quan;
         cout << "ISBN: ";
-        cin >> iSBN;
+        cin >> isbn;
         cout << "Title: ";
         cin.ignore();
         getline(cin, title);
@@ -31,70 +31,46 @@ void cashier()
         cin >> price;
     
     
-	    cout << "Serendipty Book Sellers\n\n";
+	    cout << "Serendipity Book Sellers\n\n";
 	    cout << "Date:" << date << " \n\n";
-	    cout << "QTY  ISBN";
-	    cout << "\tTitle\t";
-	    cout << "\t\t\tPrice";
-	    cout << "\t     Total\n";
-	    cout << "__________________________________________________________________\n";
-	    cout << quan;
-	    float k = quan;
-	    numChars = 0;
-	    while (k > 1)
-	    {
-	        k = k / 10;
-	        numChars++;
-	    }
-	
-	    for (int i = 0; i < (5 - numChars); i++)
-	    {
-	        cout << " ";
-	    }
-	
-	    cout << iSBN;
-	
-	    for (int i = 0; i < (11 - static_cast<int>(iSBN.length())); i++)
-	    {
-	        cout << " ";
-	    }
-	
-	    cout << title;
-	
-	    for (int i = 0; i < (32 - static_cast<int>(title.length())); i++)
-	    {
-	        cout << " ";
-	    }
-	
-	    cout << "$ " << price;
-	
-	    k = price;
-	    numChars = 0;
-	    while (k > 1)
-	    {
-	        k = k / 10;
-	        numChars++;
-	    }
-	
-	    for (int i = 0; i < (8 - numChars); i++)
-	    {
-	        cout << " ";
-	    }
-	
-    	cout << "$ " << price * quan << endl;
-	
+	    cout << "QTY\tISBN\t\tTitle\t\t\t\tPrice\t\tTotal\n";
+	    cout << "_________________________________________";
+		cout << "_________________________________________";
+		cout << "\n\n\n";
+
+	    cout << quan << "\t";
+
+	    cout << left << setw(14) << isbn << "\t";
+
+	    cout << left << setw(26) << title << "\t$ ";
+		
+		cout << fixed << showpoint << right << setprecision(2);
+	    
+		cout << left << setw(6) << price << "\t$ ";
+		cout << left << price * quan;
+        cout << "\n\n\n";
+
+
+
+    	cout << "\t\tSubtotal\t\t\t\t\t\t$ " << setw(2) << fixed << price * quan <<"\n";
+    	cout << "\t\tTax\t\t\t\t\t\t\t$ " << left << (price * quan) * 0.06 <<"\n";
+    	cout << "\t\tTotal\t\t\t\t\t\t\t$ " << left << (price * quan) * 1.06 << "\n";
     	cout << endl;
-    	cout << endl;
-    	cout << "\t\tSubtotal  " << price * quan <<"\n";
-    	cout << "\t\tTax  " << (price * quan) * 0.06 <<"\n";
-    	cout << "\t\tTotal  " << (price * quan) * 1.06 << "\n";
-    	cout << endl;
-    	cout << "Thank You for Shopping at Serendipity!";
+    	cout << "Thank You for Shopping at Serendipity!\n";
     	cout << "Process Another Transaction?\n1. Yes\n2. No\n";
+		cout << "Please enter a number in the range 1-2: ";
     	cin >> choice;
-    	while (choice != 1 && choice != 2)
+		if (choice != 1 && choice != 2)
+		{
+			cout << "Invalid choice. Please enter a number in the range 1-2: ";
+			pass = false;
+		}
+    	while (pass == false)
     	{
+			choice = 0;
+		    cout << "Please enter a number in the range 1-2.";
     	    cout << "Process Another Transaction?\n1. Yes\n2. No\n";
+			cin.ignore();
     	    cin >> choice;
     	}
     	cout << endl;

@@ -5,7 +5,6 @@
 using namespace std;
 
 
-void bookinfo(string, string, string, string, string, int, double, double);
-
+void bookInfo(string, string, string, string, string, int, double, double);
 
 #endif
