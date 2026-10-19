@@ -66,17 +66,22 @@ void lookUpBook()
 {
     cout << "Please enter the book title: ";
     string book;
+    bool found = false;
     cin.ignore();
     getline(cin, book);
     for (int x = 0; x < SIZE; x++)
     {
         if (book == bookTitle[x])
         {
-           bookInfo(bookTitle[x], isbn[x], author[x], publisher[x], dateAdded[x], qtyOnHand[x], wholesale[x], retail[x]);
+           bookInfo(isbn[x], bookTitle[x], author[x], publisher[x], dateAdded[x], qtyOnHand[x], wholesale[x], retail[x]);
+           found = true;
            break;
         }
     }
-    cout << "Book not found.\n";
+    if (!found)
+    {
+        cout << "Book not found.\n";
+    }
 }
 
 void addBook()
@@ -86,16 +91,16 @@ void addBook()
     {
         if (bookTitle[x] == "")
         {
-            cout << "Enter the book title: ";
-            cin.ignore();
-            getline(cin, bookTitle[x]);
             cout << "Enter the ISBN: ";
+            cin.ignore();
             getline(cin, isbn[x]);
+            cout << "Enter the book title: ";
+            getline(cin, bookTitle[x]);
             cout << "Enter the author: ";
             getline(cin, author[x]);
             cout << "Enter the publisher: ";
             getline(cin, publisher[x]);
-            cout << "Enter the date added: ";
+            cout << "Enter the date added(MM-DD-YYYY): ";
             getline(cin, dateAdded[x]);
             cout << "Enter the quantity on hand: ";
             cin >> qtyOnHand[x];
@@ -127,10 +132,10 @@ void editBook()
         {
             while (!edited)
             {
-                bookInfo(bookTitle[x], isbn[x], author[x], publisher[x], dateAdded[x], qtyOnHand[x], wholesale[x], retail[x]);
+                bookInfo(isbn[x], bookTitle[x], author[x], publisher[x], dateAdded[x], qtyOnHand[x], wholesale[x], retail[x]);
                 cout << "Which field would you like to edit?\n";
-                cout << "1. Book Title\n";
-                cout << "2. ISBN\n";
+                cout << "1. ISBN\n";
+                cout << "2. Book Title\n";
                 cout << "3. Author\n";
                 cout << "4. Publisher\n";
                 cout << "5. Date Added\n";
@@ -149,14 +154,14 @@ void editBook()
                 switch(choice)
                 {
                     case 1:
-                        cout << "Enter the new book title: ";
-                        cin.ignore();
-                        getline(cin, bookTitle[x]);
-                        break;
-                    case 2:
                         cout << "Enter the new ISBN: ";
                         cin.ignore();
                         getline(cin, isbn[x]);
+                        break;
+                    case 2:
+                        cout << "Enter the new book title: ";
+                        cin.ignore();
+                        getline(cin, bookTitle[x]);
                         break;
                     case 3:
                         cout << "Enter the new author: ";
@@ -205,20 +210,21 @@ void deleteBook()
 {
     cout << "Please enter the book title: ";
     string book;
+    bool found = false;
     cin.ignore();
     getline(cin, book);
     for (int x = 0; x < SIZE; x++)
     {
         if (book == bookTitle[x])
         {
-           bookInfo(bookTitle[x], isbn[x], author[x], publisher[x], dateAdded[x], qtyOnHand[x], wholesale[x], retail[x]);
+           bookInfo(isbn[x], bookTitle[x], author[x], publisher[x], dateAdded[x], qtyOnHand[x], wholesale[x], retail[x]);
            cout << "Are you sure you want to delete this book? (Y/N): ";
            char choice;
            cin >> choice;
            if (choice == 'Y' || choice == 'y')
            {
-                bookTitle[x] = "";
                 isbn[x] = "";
+                bookTitle[x] = "";
                 author[x] = "";
                 publisher[x] = "";
                 dateAdded[x] = "";
@@ -226,9 +232,13 @@ void deleteBook()
                 wholesale[x] = 0.0;
                 retail[x] = 0.0;
                 cout << "Book deleted.\n";
+                found = true;
            }
            break;
         }
     }
-    cout << "Book not found.\n";
+    if (!found)
+    {
+        cout << "Book not found.\n";
+    }
 }

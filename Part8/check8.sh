@@ -1,11 +1,3 @@
-Click here for a runnable example for Part 8.
-
-When you are done, submit the link to your PUBLIC Serendipity project repository.
-
-
-
-
-
 #!/bin/bash
 # Part 8 self-check. Run from your Part8 folder:  bash check8.sh
 V=${V:-0}
