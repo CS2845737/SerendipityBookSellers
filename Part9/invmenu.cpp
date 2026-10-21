@@ -91,11 +91,11 @@ void addBook()
     {
         if (bookTitle[x] == "")
         {
-            cout << "Enter the ISBN: ";
-            cin.ignore();
-            getline(cin, isbn[x]);
             cout << "Enter the book title: ";
+            cin.ignore();
             getline(cin, bookTitle[x]);
+            cout << "Enter the ISBN: ";
+            getline(cin, isbn[x]);
             cout << "Enter the author: ";
             getline(cin, author[x]);
             cout << "Enter the publisher: ";
@@ -174,7 +174,7 @@ void editBook()
                         getline(cin, publisher[x]);
                         break;
                     case 5:
-                        cout << "Enter the new date added: ";
+                        cout << "Enter the new date added (MM-DD-YYYY): ";
                         cin.ignore();
                         getline(cin, dateAdded[x]);
                         break;
@@ -232,8 +232,8 @@ void deleteBook()
                 wholesale[x] = 0.0;
                 retail[x] = 0.0;
                 cout << "Book deleted.\n";
-                found = true;
            }
+           found = true;
            break;
         }
     }
